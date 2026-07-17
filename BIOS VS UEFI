@@ -2,21 +2,39 @@ BIOS and UEFI are two types of firmware that initialize your computer's hardware
 UEFI is the modern replacement for BIOS and offers significant improvements in speed, security, and functionality.
 
 1- What is BIOS?
-A BIOS is a sequence of instructions stored on a small memory ship on the motherboard.
+A BIOS is a sequence of instructions stored on a small memory chip on the motherboard. 
+These instructions tell the computer how to initialize the hardware and start the operating system.
 BIOS (Basic Input/Output System) is the traditional firmware used in PCs since the early 1980s.
+The BIOS is just firmware (code) stored in a memory chip. It cannot "run itself." Code only runs when a processor executes it.
+The BIOS is the first program the CPU executes after power-on.
+When the computer is powered on, the CPU starts executing the BIOS firmware -> The BIOS then directs the CPU through the startup process until the operating system is loaded.
 
 2- How BIOS Works?
+The BIOS provides the instructions that the CPU executes -> The CPU starts executing.
 When you power on a computer:
 
 - The CPU starts executing code stored in the BIOS chip on the motherboard.
-(The CPU first job is to search for the BIOS to find the order on how to start the computer, cause the BIOS contains a sequence of instructions
-in which it tells the CPU how to exactly start the computer following a certain order).
+[
+When the CPU is powered on, it doesn't already know how to start the computer. 
+It begins executing instructions from a predefined location in memory where the BIOS firmware is stored. 
+The BIOS then tells the CPU what to do next, following a specific sequence: 
+checking the hardware, finding a bootable device, and starting the operating system.
+]
 - BIOS performs a POST (Power-On Self-Test):
   Checks RAM
   Detects CPU
   Detects keyboard
   Checks storage devices
   Verifies essential hardware
+[
+Inside the BIOS is a code in which inside is a squence of instructions that tells the CPU what to do exactly.
+Inside a BIOS we find : 
+1st BIOS Instruction : "Check the RAM". -> The CPU performs this check.
+2nd BIOS Instruction : "Check the keyboard and mouse". -> The CPU performs this check.
+3rd BIOS Instruction : "Find the Storage Device (SSD/HDD)". -> The CPU performs this check.
+4th BIOS Instruction : "Initialize the graphics hardware". -> The CPU performs this check.
+=> This whole checking process is called POST (Power-On Self-Test).
+]
 - BIOS searches for a bootable device.
 - It loads the Master Boot Record (MBR) from the first sector of the disk.
 - The bootloader in the MBR loads the operating system.
