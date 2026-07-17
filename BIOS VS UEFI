@@ -1,0 +1,22 @@
+BIOS and UEFI are two types of firmware that initialize your computer's hardware and start the operating system.
+UEFI is the modern replacement for BIOS and offers significant improvements in speed, security, and functionality.
+
+1- What is BIOS?
+A BIOS is a sequence of instructions stored on a small memory ship on the motherboard.
+BIOS (Basic Input/Output System) is the traditional firmware used in PCs since the early 1980s.
+
+2- How BIOS Works?
+When you power on a computer:
+
+- The CPU starts executing code stored in the BIOS chip on the motherboard.
+(The CPU first job is to search for the BIOS to find the order on how to start the computer, cause the BIOS contains a sequence of instructions
+in which it tells the CPU how to exactly start the computer following a certain order).
+- BIOS performs a POST (Power-On Self-Test):
+  Checks RAM
+  Detects CPU
+  Detects keyboard
+  Checks storage devices
+  Verifies essential hardware
+- BIOS searches for a bootable device.
+- It loads the Master Boot Record (MBR) from the first sector of the disk.
+- The bootloader in the MBR loads the operating system.
