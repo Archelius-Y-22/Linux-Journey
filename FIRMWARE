@@ -1,3 +1,36 @@
 1- What is a Firmware?
 A Firmware is a type of software that is permanently or semi-permanently stored inside a hardware device to control how that device works.
 Think of it as the software that gives hardware its basic instructions.
+A Firmware runs closer to the Hardware, often before the OS even starts.
+A simple hierarchy looks like this:
+
+User Applications
+        ↓
+Operating System (Linux, Windows, macOS)
+        ↓
+     Drivers
+        ↓
+     Firmware
+        ↓
+Hardware Components
+
+2- Why Does Hardware Need Firmware?
+Hardware components are just electronic circuits. They need instructions that tell them:
+
+How to start
+How to communicate
+How to perform their basic functions
+How to interact with the operating system
+
+Firmware provides those instructions.
+
+Example:
+When you press the power button on your computer:
+
+The motherboard firmware starts running.
+It checks that hardware exists and is working.
+It initializes the CPU, RAM, keyboard, storage devices, etc.
+It searches for a boot device.
+It loads the operating system.
+
+Without firmware, your computer would not know how to start.
