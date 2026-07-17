@@ -36,5 +36,30 @@ Inside a BIOS we find :
 => This whole checking process is called POST (Power-On Self-Test).
 ]
 - BIOS searches for a bootable device.
+[
+BIOS tells the CPU to find a bootable device.
+The BIOS instructions now say something like: "Look for a device that contains an operating system".
+The CPU follows those instructions.
+For example, it checks in the configured boot order:
+SSD
+USB drive
+DVD
+Network
+Suppose your SSD is first and contains Windows.
+]
 - It loads the Master Boot Record (MBR) from the first sector of the disk.
+[
+BIOS loads the bootloader.
+The BIOS reads the first sector of the bootable disk (the MBR on BIOS systems).
+Inside the MBR is a tiny program called the bootloader.
+The BIOS copies that bootloader into RAM and tells the CPU: "Start executing this program".
+So now the CPU stops executing BIOS code and starts executing the bootloader.
+]
 - The bootloader in the MBR loads the operating system.
+[
+Next The bootloader takes over.
+The bootloader's job is much bigger than the BIOS's.
+It says to the CPU: "Load Linux OS into RAM" -> The CPU does exactly that.
+Once Linux is loaded into RAM, the CPU begins executing Linux' code instead of the bootloader.
+Now Linux is in control of the computer.
+]
