@@ -1,0 +1,59 @@
+1- What is a MBR (Master Boot Record)?
+MBR is the very first sector of a storage device (such as a hard drive, SSD, or USB drive).
+Its main purpose is to help the computer start (boot) an operating system.
+MBR is like a Table of Content, which tells the computer : 
+- How the disk is divided into partitions.
+- Which partition is bootable.
+- How to begin loading the operating system.
+
+2- Where is the MBR Located?
+The MBR is stored in the first physical sector of the disk.
+Sector number: 0
+Size: 512 bytes (on traditional disks)
+Hard Disk (When a BIOS-based computer starts, it always reads Sector 0 first) :
++-------------------------------------------------------+
+| Sector 0                                              |
+|                                                       |
+| MASTER BOOT RECORD (MBR)                             |
++-------------------------------------------------------+
+| Sector 1                                              |
++-------------------------------------------------------+
+| Sector 2                                              |
++-------------------------------------------------------+
+| Remaining sectors...                                  |
++-------------------------------------------------------+
+
+3- Structure of the MBR?
+The 512-byte MBR is divided into three parts.
++--------------------------------------------------+
+| Boot Code              446 bytes                 |
++--------------------------------------------------+
+| Partition Table         64 bytes                 |
++--------------------------------------------------+
+| Boot Signature          2 bytes                  |
++--------------------------------------------------+
+Total = 512 bytes.
+
+  a) Boot Code (446 Bytes) : 
+      This is a tiny program.
+      Its job is not to load Linux directly (It cannot load an operating system/Display fancy menus/Understand file systems very well).
+      Instead, it:
+      - Finds the active partition.
+      - Loads that partition's boot sector.
+      - Hands control over to a larger bootloader.
+
+  b) Partition Table (64 Bytes) : 
+      The next part is the partition table.
+      +--------------------------------+
+      | Partition Entry 1              |
+      +--------------------------------+
+      | Partition Entry 2              |
+      +--------------------------------+
+      | Partition Entry 3              |
+      +--------------------------------+
+      | Partition Entry 4              |
+      +--------------------------------+
+      There are 4 partition entries.
+      Each entry is 16 bytes.
+
+  c) Boot Signature (2 Bytes) : 
