@@ -63,3 +63,17 @@ It says to the CPU: "Load Linux OS into RAM" -> The CPU does exactly that.
 Once Linux is loaded into RAM, the CPU begins executing Linux' code instead of the bootloader.
 Now Linux is in control of the computer.
 ]
+
+3- What is an UEFI?
+UEFI does the same basic job as BIOS, but it is a newer and more powerful way of doing it.
+UEFI (Unified Extensible Firmware Interface) is modern motherboard firmware that replaces traditional BIOS.
+Like BIOS, UEFI is stored on a chip on the motherboard.
+Its job is to:
+Initialize hardware.
+Check that the computer is ready.
+Find the operating system.
+Start the boot process.
+
+4- What is the key difference between BIOS and UEFI?
+BIOS looks for a bootloader inside the MBR(Master Boot Record).
+UEFI looks for a bootloader inside the EFI System Partition(ESP). -> A bootloader is a file ending with (.efi).
