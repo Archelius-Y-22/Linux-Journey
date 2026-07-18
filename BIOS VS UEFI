@@ -82,9 +82,8 @@ Find the operating system.
 Start the boot process.
 
 4- What is the key difference between BIOS and UEFI?
-BIOS looks for a bootloader inside the MBR(Master Boot Record).
+BIOS looks for a bootloader inside the MBR(Master Boot Record). -> The MBR is the first sector of the boot disk
 UEFI looks for a bootloader inside the EFI System Partition(ESP). -> A bootloader is a file ending with (.efi).
-
 
 
 
