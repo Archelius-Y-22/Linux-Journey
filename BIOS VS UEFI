@@ -52,7 +52,7 @@ Suppose your SSD is first and contains Windows.
 BIOS loads the bootloader.
 The BIOS reads the first sector of the bootable disk (the MBR on BIOS systems).
 Inside the MBR is a tiny program called the bootloader.
-The BIOS copies that bootloader into RAM and tells the CPU: "Start executing this program".
+The BIOS copies that bootloader into RAM and tells the CPU: "Start exA bootloader is tiny program stored inside MBR which knows how to load an entire OSecuting this program".
 So now the CPU stops executing BIOS code and starts executing the bootloader.
 ]
 - The bootloader in the MBR loads the operating system.
@@ -63,6 +63,13 @@ It says to the CPU: "Load Linux OS into RAM" -> The CPU does exactly that.
 Once Linux is loaded into RAM, the CPU begins executing Linux' code instead of the bootloader.
 Now Linux is in control of the computer.
 ]
+
+3- What is a bootloader? (A bootloader is tiny program stored inside MBR which knows how to load an entire OS)
+First, ask yourself this question: Can the BIOS or UEFI load millions of lines of Windows code? [No]
+BIOS/UEFI are small firmware programs. Their job is only to get the computer ready.
+So they need someone else to load the operating system.
+That "someone else" is the bootloader.
+BIOS finds MBR -> inside MBR is a tiny bootloader -> BIOS loads the tiny program which is called the bootloader  
 
 3- What is an UEFI?
 UEFI does the same basic job as BIOS, but it is a newer and more powerful way of doing it.
@@ -77,3 +84,15 @@ Start the boot process.
 4- What is the key difference between BIOS and UEFI?
 BIOS looks for a bootloader inside the MBR(Master Boot Record).
 UEFI looks for a bootloader inside the EFI System Partition(ESP). -> A bootloader is a file ending with (.efi).
+
+
+
+
+
+Resume: 
+- A bootloader is tiny program stored inside MBR which knows how to load an entire OS.
+- BIOS is a firmware (a small code that tells the CPU how to start a computer)
+- UEFI is newer version of BIOS.
+- BIOS uses MBR to find the bootloader that loads an entire OS (the BIOS cant charge the entire code of an OS inside its code, cause an
+OS code is huge, The BIOS is a small firmware program. It doesn't know how to load an entire operating system.).
+- UEFI uses GPT
