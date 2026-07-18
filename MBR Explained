@@ -38,9 +38,34 @@ Total = 512 bytes.
       This is a tiny program.
       Its job is not to load Linux directly (It cannot load an operating system/Display fancy menus/Understand file systems very well).
       Instead, it:
+
       - Finds the active partition.
+        A hard disk can have multiple partitions.
+        +-----------------------+
+        | Partition 1 (Windows) |
+        +-----------------------+
+        | Partition 2 (Linux)   | ← Active
+        +-----------------------+
+        | Partition 3 (Data)    |
+        +-----------------------+
+        One partition is marked as Active (or bootable).
+        The boot code asks: "Which partition should I boot from?"
+        It finds the one marked Active.
+
       - Loads that partition's boot sector.
+        Every bootable partition has its own boot sector.
+        Think of the boot sector as the next set of instructions.
+        The boot code loads this boot sector into memory.
+
       - Hands control over to a larger bootloader.
+        The boot sector then loads a much larger program called the bootloader.
+        Examples:
+        GRUB (Linux) or Windows Boot Manager (Windows).
+        Unlike the tiny 446-byte boot code, the bootloader is much larger and can:
+        Read files from the disk.
+        Display a boot menu.
+        Let you choose between Windows and Linux.
+        Load the operating system kernel.
 
   b) Partition Table (64 Bytes) : 
       The next part is the partition table.
