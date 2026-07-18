@@ -76,10 +76,10 @@ UEFI does the same basic job as BIOS, but it is a newer and more powerful way of
 UEFI (Unified Extensible Firmware Interface) is modern motherboard firmware that replaces traditional BIOS.
 Like BIOS, UEFI is stored on a chip on the motherboard.
 Its job is to:
-Initialize hardware.
-Check that the computer is ready.
-Find the operating system.
-Start the boot process.
+- Initialize hardware.
+- Check that the computer is ready.
+- Find the operating system.
+- Start the boot process.
 
 4- What is the key difference between BIOS and UEFI?
 BIOS looks for a bootloader inside the MBR(Master Boot Record). -> The MBR is the first sector of the boot disk
