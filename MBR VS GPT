@@ -6,6 +6,8 @@ There are two main different partitioning schemes used to organize data on stora
 - Maximum primary partitions : 4 (or 3 primary + 1 extended)
 - Boot mode : Legacy BIOS
 - Partition table location : One copy at the beginning of the disk
+- Reliability : Less fault tolerant
+- Compatibility : Older operating systems and hardware
 
 2- GPT (GUID Partition Table) : 
 - Introduced : Around 2005 (part of UEFI)
@@ -13,4 +15,6 @@ There are two main different partitioning schemes used to organize data on stora
 - Maximum primary partitions : Typically 128 partitions without extended partitions
 - Boot mode : UEFI
 - Partition table location : Primary table at the beginning and a backup at the end
+- Reliability : More reliable with redundancy and integrity checks
+- Compatibility : Modern operating systems and UEFI firmware
 GPT is the newer standard and is generally recommended for modern systems.
