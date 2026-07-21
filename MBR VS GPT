@@ -1,1 +1,16 @@
-There are two main styles:
+There are two main different partitioning schemes used to organize data on storage devices like HDDs and SSDs :
+
+1- MBR (Master Boot Record) : 
+- Introduced : 1983
+- Maximum disk size : 2 TB
+- Maximum primary partitions : 4 (or 3 primary + 1 extended)
+- Boot mode : Legacy BIOS
+- Partition table location : One copy at the beginning of the disk
+
+2- GPT (GUID Partition Table) : 
+- Introduced : Around 2005 (part of UEFI)
+- Maximum disk size : ~9.4 ZB (zettabytes), far beyond current drives
+- Maximum primary partitions : Typically 128 partitions without extended partitions
+- Boot mode : UEFI
+- Partition table location : Primary table at the beginning and a backup at the end
+GPT is the newer standard and is generally recommended for modern systems.
