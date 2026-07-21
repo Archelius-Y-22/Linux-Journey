@@ -10,6 +10,7 @@ There are two main different partitioning schemes used to organize data on stora
 - Compatibility : Older operating systems and hardware
 
 2- GPT (GUID Partition Table) : 
+=> GPT is the newer standard and is generally recommended for modern systems.
 - Introduced : Around 2005 (part of UEFI)
 - Maximum disk size : ~9.4 ZB (zettabytes), far beyond current drives
 - Maximum primary partitions : Typically 128 partitions without extended partitions
@@ -17,4 +18,29 @@ There are two main different partitioning schemes used to organize data on stora
 - Partition table location : Primary table at the beginning and a backup at the end
 - Reliability : More reliable with redundancy and integrity checks
 - Compatibility : Modern operating systems and UEFI firmware
-GPT is the newer standard and is generally recommended for modern systems.
+
+------------------------------------------------------------------------------------------------------------------------------
+Main difference : 
+1- MBR (Master Boot Record) : 
+MBR has been around since the early 1980s.
+Stores boot code and the partition table in the first sector of the disk.
+Supports disks up to 2 TB.
+Limited to 4 primary partitions.
+If the MBR becomes corrupted, the system may fail to boot because there's only one copy.
+
+Best for:
+- Older computers with Legacy BIOS.
+- Older operating systems that don't support GPT.
+
+2- GPT (GUID Partition Table)
+GPT is part of the UEFI specification and is the modern replacement for MBR.
+Supports extremely large disks (well beyond today's storage capacities).
+Allows many partitions (typically 128 on Windows).
+Stores multiple copies of partition information for better recovery (Main copy at the beginning and a Backup copy at the end).
+Includes CRC (Cyclic Redundancy Check) to detect corruption.
+
+Best for:
+- Modern PCs using UEFI firmware.
+- SSDs and HDDs larger than 2 TB.
+- Systems running current versions of Windows, Linux, and macOS.
+------------------------------------------------------------------------------------------------------------------------------
