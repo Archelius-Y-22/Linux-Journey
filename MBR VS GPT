@@ -44,3 +44,13 @@ Best for:
 - SSDs and HDDs larger than 2 TB.
 - Systems running current versions of Windows, Linux, and macOS.
 ------------------------------------------------------------------------------------------------------------------------------
+
+3- Which one to choose?
+Choose GPT if:
+- Your computer uses UEFI (most systems made in the last decade).
+- Your drive is larger than 2 TB.
+- You want better reliability and more partitions.
+
+Choose MBR only if:
+- You're using an older PC that boots in Legacy BIOS mode.
+- You need compatibility with older operating systems or hardware.
